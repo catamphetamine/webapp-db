@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "webapp-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register --require @babel/polyfill --require ./test/initialize-db.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catamphetamine/webapp-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catamphetamine/webapp-api/issues"
+  },
+  "homepage": "https://github.com/catamphetamine/webapp-api#readme",
+  "dependencies": {
+    "mysql2": "^1.6.1",
+    "sequelize": "^5.0.0-beta.13",
+    "serverless-functions": "^0.3.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-destructuring": "^7.1.3",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
