@@ -2,15 +2,13 @@ import DB from './api/db'
 
 export default class API {
 	constructor(configuration) {
-		this._db = new DB(configuration.database)
+		this.configuration = configuration
 	}
 
 	get db() {
-		this._db.init()
+		if (!this._db) {
+			this._db = new DB(this.configuration.database)
+		}
 		return this._db
-	}
-
-	set db(value) {
-		this._db = value
 	}
 }

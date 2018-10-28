@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize'
 
 export default {
 	properties: {
-		nameId: {
+		idAlias: {
 			type: DataTypes.STRING,
 			allowNull: true,
 			unique: true

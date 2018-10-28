@@ -4,11 +4,15 @@ export default {
 	properties: {
 		title: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
 		content: {
 			type: DataTypes.TEXT,
-			allowNull: false
+			allowNull: true
+		},
+		attachments: {
+			type: DataTypes.TEXT,
+			allowNull: true
 		}
 	},
 	associate(models) {

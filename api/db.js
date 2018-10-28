@@ -7,16 +7,8 @@ export default class Database {
 	static Op = Op
 
 	constructor(configuration) {
-		this.configuration = configuration
-	}
-
-	init() {
-		if (this.initialized) {
-			return
-		}
-
 		// Initialize database connection.
-		this.sequelize = new Sequelize(this.configuration)
+		this.sequelize = new Sequelize(configuration)
 
 		// Define models.
 		for (const modelName of Object.keys(models)) {
@@ -32,8 +24,6 @@ export default class Database {
 				models[modelName].associate(this)
 			}
 		}
-
-		this.initialized = true
 	}
 
 	async reset() {
