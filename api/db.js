@@ -12,16 +12,20 @@ export default class Database {
 
 		// Define models.
 		for (const modelName of Object.keys(models)) {
+			const model = models[modelName]
 			this[modelName] = this.sequelize.define(
 				modelName[0].toLowerCase() + modelName.slice(1),
-				models[modelName].properties
+				model.properties, {
+					indexes: model.indexes || []
+				}
 			)
 		}
 
 		// Associate models.
 		for (const modelName of Object.keys(models)) {
-			if (models[modelName].associate) {
-				models[modelName].associate(this)
+			const model = models[modelName]
+			if (model.associate) {
+				model.associate(this)
 			}
 		}
 	}

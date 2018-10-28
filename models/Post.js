@@ -15,6 +15,9 @@ export default {
 			allowNull: true
 		}
 	},
+	indexes: [{
+		fields: ['createdAt']
+	}],
 	associate(models) {
 		models.Post.belongsTo(models.Account)
 	}
