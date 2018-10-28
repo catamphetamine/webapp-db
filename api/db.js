@@ -4,7 +4,7 @@ import * as models from '../models'
 
 export default class Database {
 	// Shortcut for "and", "or", etc.
-	static Op = Op
+	Op = Op
 
 	constructor(configuration) {
 		// Initialize database connection.
