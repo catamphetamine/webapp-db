@@ -9,7 +9,7 @@ Install MySQL, and a GUI for it (e.g. HeidiSQL).
 
 Create `webapp-test` database and user `webapp` with no password.
 
-Create `configuration.json` file (is excluded from repo because it holds passwords). Example:
+Create `configuration.json` file (is excluded from the repo because it holds passwords). Example:
 
 ```json
 {
