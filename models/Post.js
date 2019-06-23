@@ -15,8 +15,11 @@ export default {
 			allowNull: true
 		}
 	},
+	// indexes: [{
+	// 	fields: ['createdAt']
+	// }],
 	indexes: [{
-		fields: ['createdAt']
+		fields: ['accountId', 'createdAt']
 	}],
 	associate(models) {
 		models.Post.belongsTo(models.Account)
