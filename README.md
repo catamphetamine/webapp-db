@@ -1,5 +1,4 @@
-Install
-=======
+## Install
 
 ```
 npm install
@@ -43,8 +42,16 @@ Test:
 npm test
 ```
 
-Then create `webapp-dev` database and initialize it:
+## Seed
+
+Create `webapp-dev` database and initialize it:
 
 ```
 npm run dev:db:init
+```
+
+Then seed it with demo data:
+
+```
+npm run dev:db:seed
 ```

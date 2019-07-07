@@ -10,6 +10,8 @@ export default {
 			type: DataTypes.TEXT,
 			allowNull: true
 		},
+		// "Denormalized" attachments.
+		// (so that it doesn't JOIN every time)
 		attachments: {
 			type: DataTypes.TEXT,
 			allowNull: true
@@ -19,15 +21,15 @@ export default {
 	// 	fields: ['createdAt']
 	// }],
 	indexes: [{
-		fields: ['authorId', 'createdAt']
+		fields: ['accountId', 'createdAt']
 	}],
 	associate(models) {
 		models.Post.belongsTo(models.Account, {
 			foreignKey: {
 				allowNull: false,
-				name: 'authorId'
+				// name: 'accountId'
 			},
-			as: 'author',
+			// as: 'author',
 			onDelete: 'restrict',
 			onUpdate: 'restrict'
 		})

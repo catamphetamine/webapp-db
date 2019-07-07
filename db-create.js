@@ -1,5 +1,5 @@
-import API from '..'
-import configuration from '../configuration'
+import API from '.'
+import configuration from './configuration'
 
 async function initializeDatabase(configuration) {
 	const api = new API(configuration)

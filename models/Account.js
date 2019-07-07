@@ -17,7 +17,6 @@ export default {
 		}
 	},
 	associate(models) {
-		models.Account.hasMany(models.Post)
 		models.Account.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: true

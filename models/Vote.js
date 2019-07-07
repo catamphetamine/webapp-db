@@ -9,10 +9,16 @@ export default {
 	},
 	associate(models) {
 		models.Vote.belongsTo(models.Account, {
+			foreignKey: {
+				allowNull: false
+			},
 			onDelete: 'restrict',
 			onUpdate: 'restrict'
 		})
 		models.Vote.belongsTo(models.Post, {
+			foreignKey: {
+				allowNull: false
+			},
 			onDelete: 'restrict',
 			onUpdate: 'restrict'
 		})

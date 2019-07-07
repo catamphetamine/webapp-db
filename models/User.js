@@ -32,6 +32,5 @@ export default {
 		}
 	},
 	associate(models) {
-		models.User.hasOne(models.Account)
 	}
 }

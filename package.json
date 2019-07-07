@@ -5,8 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:db:init": "cross-env NODE_ENV=dev babel-node ./test/initialize-db.js",
-    "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --require ./test/initialize-db.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
+    "dev:db:init": "cross-env NODE_ENV=dev babel-node ./db-create.js",
+    "dev:db:seed": "cross-env NODE_ENV=dev babel-node ./db-seed.js",
+    "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --require ./db-create.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
   },
   "repository": {
     "type": "git",

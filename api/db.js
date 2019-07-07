@@ -30,6 +30,10 @@ export default class Database {
 		}
 	}
 
+	async close() {
+		await this.sequelize.close()
+	}
+
 	async reset() {
 		await this.sequelize.sync({
 			force: true,
