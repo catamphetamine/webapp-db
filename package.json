@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register --require @babel/polyfill --require ./test/initialize-db.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
+    "dev:db:init": "cross-env NODE_ENV=dev babel-node ./test/initialize-db.js",
+    "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --require ./test/initialize-db.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "serverless-functions": "^0.3.1"
   },
   "devDependencies": {
+    "@babel/node": "^7.5.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-destructuring": "^7.1.3",
@@ -30,6 +32,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "mocha": "^5.2.0"
   }
 }

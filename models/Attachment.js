@@ -2,12 +2,24 @@ import { DataTypes } from 'sequelize'
 
 export default {
 	properties: {
+		type: {
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		mimeType: {
+			type: DataTypes.STRING,
+			allowNull: false
+		},
 		title: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
 		description: {
 			type: DataTypes.STRING,
+			allowNull: true
+		},
+		date: {
+			type: DataTypes.DATE,
 			allowNull: true
 		},
 		latitude: {
@@ -28,7 +40,8 @@ export default {
 			foreignKey: {
 				allowNull: true
 			},
-			onDelete: 'restrict'
+			onDelete: 'restrict',
+			onUpdate: 'restrict'
 		})
 	}
 }

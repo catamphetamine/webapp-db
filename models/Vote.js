@@ -9,10 +9,12 @@ export default {
 	},
 	associate(models) {
 		models.Vote.belongsTo(models.Account, {
-			onDelete: 'restrict'
+			onDelete: 'restrict',
+			onUpdate: 'restrict'
 		})
 		models.Vote.belongsTo(models.Post, {
-			onDelete: 'restrict'
+			onDelete: 'restrict',
+			onUpdate: 'restrict'
 		})
 	}
 }

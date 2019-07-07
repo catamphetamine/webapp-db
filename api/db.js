@@ -33,7 +33,7 @@ export default class Database {
 	async reset() {
 		await this.sequelize.sync({
 			force: true,
-			match: /-test$/
+			match: /-(test|dev)$/
 		})
 	}
 }

@@ -28,7 +28,8 @@ export default {
 				name: 'authorId'
 			},
 			as: 'author',
-			onDelete: 'restrict'
+			onDelete: 'restrict',
+			onUpdate: 'restrict'
 		})
 	}
 }

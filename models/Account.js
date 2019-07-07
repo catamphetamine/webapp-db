@@ -22,7 +22,8 @@ export default {
 			foreignKey: {
 				allowNull: true
 			},
-			onDelete: 'restrict'
+			onDelete: 'restrict',
+			onUpdate: 'restrict'
 		})
 	}
 }
