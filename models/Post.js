@@ -22,6 +22,8 @@ export default {
 		fields: ['accountId', 'createdAt']
 	}],
 	associate(models) {
-		models.Post.belongsTo(models.Account)
+		models.Post.belongsTo(models.Account, {
+			as: 'author'
+		})
 	}
 }
