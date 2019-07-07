@@ -2,14 +2,21 @@ import { DataTypes } from 'sequelize'
 
 export default {
 	properties: {
-		idAlias: {
+		title: {
 			type: DataTypes.STRING,
-			allowNull: true,
-			unique: true
+			allowNull: true
 		},
-		name: {
+		description: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
+		},
+		latitude: {
+			type: DataTypes.DOUBLE,
+			allowNull: true
+		},
+		longitude: {
+			type: DataTypes.DOUBLE,
+			allowNull: true
 		},
 		data: {
 			type: DataTypes.TEXT,
@@ -17,8 +24,7 @@ export default {
 		}
 	},
 	associate(models) {
-		models.Account.hasMany(models.Post)
-		models.Account.belongsTo(models.User, {
+		models.Attachment.belongsTo(models.Post, {
 			foreignKey: {
 				allowNull: true
 			},

@@ -19,11 +19,16 @@ export default {
 	// 	fields: ['createdAt']
 	// }],
 	indexes: [{
-		fields: ['accountId', 'createdAt']
+		fields: ['authorId', 'createdAt']
 	}],
 	associate(models) {
 		models.Post.belongsTo(models.Account, {
-			as: 'author'
+			foreignKey: {
+				allowNull: false,
+				name: 'authorId'
+			},
+			as: 'author',
+			onDelete: 'restrict'
 		})
 	}
 }
