@@ -1,9 +1,9 @@
-import API from '..'
+import DB from '..'
 import configuration from '../configuration'
 
-describe('API', () => {
+describe('DB', () => {
 	it('should work', () => {
-		const api = new API(configuration.test)
-		expect(api.db.sequelize.modelManager.models.map(_ => _.name)).to.include('account')
+		const db = new DB(configuration.test)
+		expect(db.sequelize.modelManager.models.map(_ => _.name)).to.include('account')
 	})
 })

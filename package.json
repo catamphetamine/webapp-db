@@ -1,30 +1,30 @@
 {
   "private": true,
-  "name": "webapp-api",
+  "name": "webapp-db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:db:init": "cross-env NODE_ENV=dev babel-node ./db-create.js",
-    "dev:db:seed": "cross-env NODE_ENV=dev babel-node ./db-seed.js",
+    "dev:db:init": "cross-env NODE_ENV=development babel-node ./db-create.js",
+    "dev:db:seed": "cross-env NODE_ENV=development babel-node ./db-seed.js",
     "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --require ./db-create.js --require ./test/setup.js --bail \"source/**/*.test.js\" \"test/**/*.test.js\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/catamphetamine/webapp-api.git"
+    "url": "git+https://github.com/catamphetamine/webapp-db.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/catamphetamine/webapp-api/issues"
+    "url": "https://github.com/catamphetamine/webapp-db/issues"
   },
-  "homepage": "https://github.com/catamphetamine/webapp-api#readme",
+  "homepage": "https://github.com/catamphetamine/webapp-db#readme",
   "dependencies": {
-    "mysql2": "^1.6.1",
-    "sequelize": "^5.0.0-beta.13",
-    "serverless-functions": "^0.3.1"
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.10.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.4",
     "@babel/node": "^7.5.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",

@@ -1,16 +1,16 @@
-import API from '.'
+import DB from '.'
 import configuration from './configuration'
 
-const api = new API(configuration[process.env.NODE_ENV])
+const db = new DB(configuration[process.env.NODE_ENV])
 
 async function seed() {
-	const user = await api.db.User.create({
+	const user = await db.User.create({
 		firstName: 'Alice',
 		lastName: 'Green',
 		email: 'alice@green.com'
 	})
 
-	const account = await api.db.Account.create({
+	const account = await db.Account.create({
 		userId: user.id,
 		idAlias: 'alice',
 		name: 'Alice Green',
@@ -33,7 +33,7 @@ async function seed() {
 		})
 	})
 
-	await api.db.Post.create({
+	await db.Post.create({
 		accountId: account.id,
 		content: JSON.stringify([
 			{
@@ -207,7 +207,7 @@ async function seed() {
 		])
 	})
 
-	await api.db.Post.create({
+	await db.Post.create({
 		accountId: account.id,
 		content: JSON.stringify([
 			"Once an apprentice of a craft had finished his apprenticeship, he would become a journeyman searching for a place to set up his own shop and make a living. After he set up his own shop, he could then call himself a master of his craft.",
@@ -260,7 +260,7 @@ async function seed() {
 		])
 	})
 
-	await api.db.Post.create({
+	await db.Post.create({
 		accountId: account.id,
 		attachments: JSON.stringify([
 			{
@@ -296,7 +296,7 @@ async function seed() {
 		])
 	})
 
-	await api.db.Post.create({
+	await db.Post.create({
 		accountId: account.id,
 		content: "The residence was designed by Irish-born architect James Hoban[2] in the neoclassical style. Construction took place between 1792 and 1800 using Aquia Creek sandstone painted white. When Thomas Jefferson moved into the house in 1801, he (with architect Benjamin Henry Latrobe) added low colonnades on each wing that concealed stables and storage. In 1814, during the War of 1812, the mansion was set ablaze by the British Army in the Burning of Washington, destroying the interior and charring much of the exterior. Reconstruction began almost immediately, and President James Monroe moved into the partially reconstructed Executive Residence in October 1817. Exterior construction continued with the addition of the semi-circular South portico in 1824 and the North portico in 1829.",
 	})
@@ -305,7 +305,7 @@ async function seed() {
 seed().then(
 	() => {
 		console.log('Finished')
-		api.db.close()
+		db.close()
 	},
 	(error) => {
 		console.error(error)

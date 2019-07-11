@@ -1,9 +1,9 @@
-import API from '.'
+import DB from '.'
 import configuration from './configuration'
 
 async function initializeDatabase(configuration) {
-	const api = new API(configuration)
-	await api.db.reset()
+	const db = new DB(configuration)
+	await db.reset()
 }
 
 initializeDatabase(configuration[process.env.NODE_ENV])

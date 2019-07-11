@@ -1,37 +1,36 @@
 ## Install
 
 ```
+git clone git@github.com:catamphetamine/webapp-db.git
+cd webapp-db
 npm install
 ```
 
-Install MySQL, and a GUI for it (for example, HeidiSQL).
+Install [MySQL](https://dev.mysql.com/downloads/) and a GUI for it (for example, [HeidiSQL](https://www.heidisql.com/download.php)).
 
 Create `webapp-test` database and user `webapp` with no password.
 
-Create `configuration.json` file (is excluded from the repo because it holds passwords). Example:
+Create `configuration.json` file (it is excluded from the repo because it contains passwords):
 
 ```json
 {
 	"test": {
-		"database": {
-			"username": "webapp",
-			"database": "webapp-test",
-			"dialect": "mysql",
-			"logging": false
-		}
+		"username": "webapp",
+		"database": "webapp-test",
+		"dialect": "mysql",
+		"logging": false
 	},
-	"dev": {
-		"database": {
-			"host": "...",
-			"port": "...",
-			"username": "root",
-			"database": "webapp-dev",
-			"dialect": "mysql",
-			"logging": false
-		}
+	"development": {
+		"host": "...",
+		"port": "...",
+		"username": "...",
+		"password": "...",
+		"dialect": "mysql",
+		"database": "webapp-dev",
+		"logging": false
 	},
-	"prod": {
-		// ...
+	"production": {
+		// Production database config.
 	}
 }
 ```
@@ -44,13 +43,15 @@ npm test
 
 ## Seed
 
-Create `webapp-dev` database and initialize it:
+Create a new `webapp-dev` database in MySQL.
+
+Then initialize it by creating the tables:
 
 ```
 npm run dev:db:init
 ```
 
-Then seed it with demo data:
+Then "seed" the database with some demo data:
 
 ```
 npm run dev:db:seed
